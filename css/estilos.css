@@ -1,0 +1,88 @@
+body{
+  background: #EEEEEE;
+}
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+.loader{
+  display: block;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  /* background: red; */
+  border-radius: 50%;
+  border: transparent 4px solid;
+  border-top: 3px solid #3498db;
+  /* transition: 2s; */
+  animation-name: fuera;
+  animation-duration: 2.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+
+}
+@keyframes fuera {
+  from{
+    transform: rotateZ(0);
+  }
+  to{
+    transform: rotateZ(360deg);
+
+  }
+}
+.loader::before{
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  left: 7px;
+  bottom: 7px;
+  border: transparent 4px solid;
+  border-top: 3px solid #121212;
+  border-radius: 50%;
+  /* transition: 2s; */
+  animation-name: medio;
+  animation-duration: 3.1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+
+}
+@keyframes medio {
+  from{
+    transform: rotateZ(0);
+  }
+  to{
+    transform: rotateZ(360deg);
+  }
+}
+
+.loader::after{
+  content: "";
+  position: absolute;
+  top: 21px;
+  right: 21px;
+  left: 21px;
+  bottom: 21px;
+  border: transparent 4px solid;
+  border-top: 3px solid #3498db;
+  border-radius: 100%;
+  /* transition: 2s; */
+  animation-name: dentro;
+  animation-duration: 2.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dentro {
+  from{
+    transform: rotateZ(0);
+  }
+  to{
+    transform: rotateZ(360deg);
+  }
+}
